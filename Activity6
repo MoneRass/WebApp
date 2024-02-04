@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+      .image-container {
+      position: relative;
+    }
+      .overlay-text {
+        position: absolute;
+        top: 40%;
+        left: 70%;
+        font-size: 50px;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        scale: 100%;
+      }
+
+
+      .youtube-frame {
+        
+        scale: 80%;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+      }
+
+      .youtube-frame iframe {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+
+      .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+      }
+
+      .progress {
+        height: 10px;
+        border-radius: 0px;
+      }
+
+      .progress::after {
+        content: none;
+      }
+
+      .progress .pgb-custom-color{
+        background-color: rgb(102, 43, 3);
+      }
+    </style>
+
+</head>
+
+
+<body>
+    
+    <!-- Nav -->
+    <div class="top sticky-top">
+
+      <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Coffee</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#type">Type</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#region">Region</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#brewmethod">Brew Method</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#more">More</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#faqs">FAQS</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="progress">
+            <div id="progress-bar" class="progress-bar pgb-custom-color" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    
+    <div class="image-container" id="">
+      <img src="https://wallpaperaccess.com/full/2545833.jpg" class="img-fluid  pb-5" alt="Your Image">
+      <div class="overlay-text">Welcome to my lovely coffee documentary website!</div>
+
+      
+    </div>
+
+    <div class="container bg-dark">
+
+      <div class="youtube-frame">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/5TiqyMRazck?si=fW6qDmQ_yPCIHDIC&amp;controls=0" title="YoauTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+
+    <div class="container" id="type">
+      <p class="text-center fw-bold fs-2 pt-5">4 TYPES OF COFFEE BEANS</p>
+      <div class="row row-cols-1-sm row-cols-md-3 g-4">
+        <div class="col col-sm-4 col-md-3 col-lg-4">
+          <div class="card h-100">
+            <img src="http://cubicocoffee.com/files/Images/Landing%20Pages/Arabica%20Coffee%20630.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Arabica</h5>
+              <p class="card-text">Arabica beans deliver the tastiest coffee known for its vibrant, multilayered flavors like fruit, florals, chocolate, and nuts. It offers a sweeter, more complex taste compared to other coffee varieties. </p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://granodecafe.net/wp-content/uploads/2021/06/Cafe-robusta-que-es-origen-y-caracteristicas.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Robusta</h5>
+              <p class="card-text">Robusta beans deliver the strongest and full-bodied flavor profile with earthy, rubbery, and bitter undertones. It’s lower in acidity, so it doesn’t have as much sweetness as Arabica.</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://coffeeaffection.com/wp-content/uploads/2019/03/What-do-Excelsa-coffee-beans-look-like-e1594676134649.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Excelsa</h5>
+              <p class="card-text">The taste of Liberica is described as being significantly sweeter than Arabica, with dominant fruity notes of jackfruit and berries. Despite the sweetness, Liberica has a light body and an unusual, rubbery flavor with bitter notes like Robusta. </p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://leclairorganics.com/wp-content/uploads/2015/10/LeClair-Organics-Liberica-Coffee-Liberica-Espresso-Web-version.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Liberica</h5>
+              <p class="card-text">Excelsa delivers a truly complex and distinctive flavor profile. It has berry-like notes and a full body with a creamy mouthfeel, along with woody and even slightly popcorn-like flavors. Excelsa is less sweet with more tartness compared to other coffees. </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+    <div class="region pt-5" id="region">
+      
+      <div class="container mx-auto">
+      <hr>
+      <p class="text-center fw-bold fs-2 pt-5">MAIN REGION OF COFFEE BEANS</p>
+
+      <p class="fs-4 fw-bold">LATIN AMERICA</p>
+      <p>
+        <em>
+          Latin American coffees generally give you good body, acidity, and a hint of fruitiness. Enjoy flavour notes that are chocolatey, nutty and with a slight citrus overtone.
+        </em>
+      </p>
+      <ul>
+        <li>BRAZIL</li>
+        <li>COLOMBIA</li>
+        <li>GUATEMALA</li>
+      </ul>
+      <img src="https://miro.medium.com/max/4400/1*TaOS5y0e9Rcxq0EIj6_6_Q.jpeg" class="w-50 pb-5">
+        
+        <p class="fs-4 fw-bold">AFRICA</p>
+        <p>
+          <em>
+            Look out for higher acidity and bright flavour notes if you are buying African coffee! Generally, African coffees can taste fruity, floral and sweet.
+          </em>
+        </p>
+        <ul>
+          <li>ETHIOPIA</li>
+          <li>KENYA</li>
+        </ul>
+        <img src="https://coffeeaffection.com/wp-content/uploads/2022/02/african-workers-are-picking-out-fresh-coffee-beans-at-washing-station_Yaroslav-Astakhov_Shutterstock.jpg" class="w-50 pb-5">
+        
+        <p class="fs-4 fw-bold">ASIA</p>
+        <p>
+          <em>
+            Asian coffees are well-known for their bitter and earthy taste notes. Discover flavours of dark chocolate, earth and herbs.
+          </em>
+        </p>
+        <ul>
+          <li>INDONESIA</li>
+          <li>MALAYSIA</li>
+          <li>VIETNAM</li>
+        </ul>
+        <img src="https://asianinspirations.com.au/wp-content/uploads/2021/07/20210728-6-Delightful-Southeast-Asian-Coffee-Drinks_05-Vietnamese-Coffee.jpg" class="w-50 pb-5">
+        <hr>
+      </div>
+    </div>
+
+    <div class="brew_method" id="brewmethod">
+      <div class="container">
+
+        <p class="text-center fw-bold fs-2 pt-5">FAMOUS BREWING METHOD</p>
+        <div class="row row-cols-1-sm row-cols-md-3 g-4">
+          <div class="col col-sm-4 col-md-3 col-lg-4">
+            <div class="card h-100">
+              <img src="https://tse3.mm.bing.net/th?id=OIP.P9kU-agF1e-R6SLebkkKzQHaE7&pid=Api&P=0&h=180" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Espresso machines</h5>
+                <p class="card-text">Espresso machines can be expensive and complicated to operate, but they’re indispensable if you’re looking for a great shot of espresso. You’ll also need to clean and descale them frequently to keep everything working properly. </p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://tse2.mm.bing.net/th?id=OIP.s-XNMjVVyUloGcrAN3RGYQHaE8&pid=Api&P=0&h=180" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">French press</h5>
+                <p class="card-text">French press coffee is easy to make and fairly fast. It produces rich, somewhat textured coffee and can be a good way to produce several cups at once.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://lineacaffe.com/wp-content/uploads/2021/05/AdobeStock_209719851-scaled.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Pour-overs</h5>
+                <p class="card-text">Basic pour-overs come in a range of sizes and designs but generally brew directly into your mug through a paper filter. The most popular brand is the Melitta.</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="https://www.liquidline.co.uk/wp-content/uploads/2019/06/pouring-cold-brew-coffee-W6S3VHD-scaled.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cold brew coffee</h5>
+                <p class="card-text">Because it’s never heated, cold brew coffee is low in acidity and slightly sweet. It’s very easy to make but does require more time.</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="FAQS" id="faqs">
+      <div class="container">
+
+        <hr>
+
+        <p class="text-center fw-bold fs-2 pt-5">FAQS</p>
+        
+        <h4>How many cups of coffee a day can you drink?</h3>
+        <p>Up to 400mg of coffee is generally considered safe although sensitivity to caffeine can vary from person to person. If you notice tremors, anxiety, agitation, headaches/ dizziness or upset stomach the chances are your common sense should tell you to pull back.</p>
+        
+        <h4>What Is The Most Expensive Coffee Bean In The World?</h4>
+        <p>Panamanian Geisha, Black Ivory, and Kopi Luwak are among the most expensive coffees in the world.
+          These rare beans can fetch over $100-$500 per pound due to their unique flavors and limited supply!</p>
+          
+        <h4>What Country Produces The Most Coffee?</h4>
+        <p>Brazil produces the most coffee in the World accounting for almost 25% of overall coffee production followed by Colombia, Vietnam, Indonesia, and Ethiopia.</p>
+        
+        <hr>
+      </div>
+    </div>
+
+    <div class="more" id="more">
+      <p class="text-center fw-bold fs-5 m-4 mt-5">You may also like : </p>
+      <div id="carouselExampleDark" class="carousel carousel-dark slide mx-auto">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="100000">
+            <img src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=600" class="d-block mx-auto" alt="...">
+            <div class="carousel-caption d-none d-md-block text-light">
+              <h5>Coffee Roaster</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+              <button type="button" class="btn btn-primary">Visit Site</button>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <img src="https://images.pexels.com/photos/302902/pexels-photo-302902.jpeg?auto=compress&cs=tinysrgb&w=600" class="d-block mx-auto" alt="...">
+            <div class="carousel-caption d-none d-md-block text-light">
+              <h5>Barista 101</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+              <button type="button" class="btn btn-primary">Visit Site</button>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <img src="https://images.pexels.com/photos/69976/pexels-photo-69976.jpeg?auto=compress&cs=tinysrgb&w=600" class="d-block mx-auto" alt="...">
+            <div class="carousel-caption d-none d-md-block text-light">
+              <h5>Drip Coffee</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+              <button type="button" class="btn btn-primary">Visit Site</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="contact" id="contact">
+
+      <div class="container text-center">
+        <hr>
+        <p class=" fw-bold fs-5 m-4 mt-5">Contact</p>
+        <p>Name : Thummatos Sribunna Email : 65010452@kmitl.ac.th Tel : 090-016-1656</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <footer>
+          <p class="text-center fw-bold">Made by Thummatos Sribunna 65010452</p>
+      </footer>
+    </div>
+    
+
+    <script>
+        function updateProgressBar() {
+            const { scrollTop, scrollHeight } = document.documentElement;
+            const scrollPercent = `${(scrollTop / (scrollHeight - window.innerHeight)) * 100}%`
+
+            var progressBar = document.getElementById('progress-bar');
+
+            progressBar.style.width = scrollPercent
+            progressBar.setAttribute('aria-valuenow', scrollPercent);
+            
+        }
+
+        document.addEventListener('scroll', updateProgressBar);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
