@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="maincontainer"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                
+                const br = document.createElement("br")
+                const colorIndex = 0;
+                let worker;
+                let curColor = 0
+                const color = ['MistyRose', 'Wheat', 'blue', 'lightBlue', 'lightSalmon']
+                const fontColor = ['DimGrey', 'DeepPink', 'FloralWhite', 'Maroon', 'GreenYellow']
+
+                // Page Header
+                const pageHeader = document.createElement("h2")
+                pageHeader.textContent = "Exercise 04: JavaScript&DOM"
+                
+                const urlList = {
+                    Firework : 'https://www.rimonthly.com/content/uploads/2017/06/j/t/gettyimages-1254324768-scaled.jpg',
+                    Crest : 'http://3.bp.blogspot.com/_CarNcodpCMA/TBKj2wQfmRI/AAAAAAAAH94/Ipsnc1MoES4/s1600/crest-graphicsfairy006b.jpg',
+                    Action : 'https://cloud.filmfed.com/movies/images/l_24c89ca6-54ae-45b0-abd6-fce128fe45ae.jpg',
+                    Buffalo : 'https://www.worldatlas.com/r/w2000-h1125-q90/upload/52/eb/00/bison-526805-1280.jpg'
+                }
+
+                // Display data and time
+                const button = document.createElement("button")
+                button.textContent = "Click me to display Data and Time"
+                button.setAttribute("id", "clickme")
+                
+                button.style.position = "absolute"
+                
+                
+                // Personal Info
+                const linkBox = document.createElement("div")
+                const link = document.createElement("a")
+                link.setAttribute("id", "personalinfo")
+                link.textContent = "Personal Info"
+                link.setAttribute("href", "#")
+                link.style.marginTop = "100px"
+
+                const infoList = document.createElement("ul")
+                const nameLi = document.createElement("li")
+                const subjectLi = document.createElement("li")
+                const semesterLi = document.createElement("li")
+                infoList.style.display = "none"
+                
+                nameLi.textContent = "Thummatos Sribunna, ID:65010452"
+                subjectLi.textContent = "Subject:Web App"
+                semesterLi.textContent = "Semester: 2"
+                
+                infoList.appendChild(nameLi)
+                infoList.append(subjectLi)
+                infoList.append(semesterLi)
+
+                linkBox.appendChild(link)
+                linkBox.appendChild(infoList)
+
+                linkBox.style.marginTop = "30px"
+                link.style.color = "Maroon"
+
+                // Snapshot
+
+                const snapshotHeader = document.createElement("h1")
+                snapshotHeader.textContent = "Snapshots"
+                const snapList = document.createElement("ul")
+                snapList.setAttribute("id", "snapList")
+
+                
+                for (const key in urlList){
+                    const listLink = document.createElement('li');
+
+                    const linkElement = document.createElement('a');
+                    linkElement.href = '#';
+                    linkElement.textContent = key;
+                    linkElement.setAttribute("id", key)
+                    listLink.appendChild(linkElement);
+                    
+                    snapList.appendChild(listLink);
+                }
+                
+
+                // Show snapshot
+                const imgBox = document.createElement('div')
+                const img = document.createElement('img')
+                imgBox.setAttribute("id", "imgContainer")
+                imgBox.style.width = '550px'
+                img.setAttribute("id", "snapImg")
+                img.setAttribute("src", "https://www.ce.kmitl.ac.th/api/main/banner/download/1")
+
+                imgBox.appendChild(img)
+                img.style.width = "100%"
+                
+                // Maincontainer
+                const maincontainerElement = document.getElementById("maincontainer")
+                maincontainerElement.appendChild(pageHeader)
+                maincontainerElement.appendChild(button)
+                maincontainerElement.appendChild(br)
+                maincontainerElement.appendChild(linkBox)
+                maincontainerElement.appendChild(snapshotHeader)
+                maincontainerElement.appendChild(snapList)
+                maincontainerElement.appendChild(imgBox)
+                // function
+                function showInfo(){
+                    if (infoList.style.display === "none"){
+                        infoList.style.display = "block"
+                    }
+                    else {
+                        infoList.style.display = "none"
+                    }
+    
+                }
+                function changeColor() {
+                    
+                    button.style.backgroundColor = color[curColor]
+                    button.style.color = fontColor[curColor]
+                    curColor += 1
+                    curColor %= color.length
+                }
+                
+                function toggleWorker(){
+                
+                    if(typeof(Worker) != "undefined"){
+                        if (typeof(worker) != "undefined"){
+                           
+                            worker.terminate();
+                            worker = undefined;
+                            button.style.right = "initial"
+                            button.style.top = "initial"
+                            button.style.position = "absolute"
+                        }
+                        else{
+                            worker = new Worker("65010452_webworker.js");
+                            
+                            button.style.right = '0'
+                            button.style.top = '0'
+                            button.style.position = "fixed"
+                        
+                            worker.onmessage = function(event) {
+                                button.textContent = event.data
+                                changeColor()
+                            }
+                        }
+                    }
+                }
+                
+                function afterClick(){
+                    toggleWorker()
+                }
+                
+                // Event
+                const buttonEvent = document.getElementById("clickme")
+                buttonEvent.addEventListener("click",    
+                afterClick
+                )
+
+                const linkHover = document.getElementById("personalinfo")
+                linkHover.addEventListener("mouseover", function(){
+                    linkHover.style.color = "DarkSeaGreen"
+                    linkHover.style.backgroundColor = "LemonChiffon"
+                })
+                linkHover.addEventListener('mouseout', function(){
+                    linkHover.style.color = "Maroon"
+                    linkHover.style.backgroundColor = "initial"
+                })
+                
+                const infoLinkListener = document.getElementById("personalinfo")
+                infoLinkListener.addEventListener("click", showInfo)
+
+                const listEvent = document.getElementById("snapList")
+                listEvent.addEventListener("click", function(event){
+                    const img = document.getElementById("snapImg")
+                    img.src = urlList[event.target.id]
+                    
+                })
+                
+            })
+            
+            </script>
+    </body>
+</html>
